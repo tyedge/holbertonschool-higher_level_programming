@@ -13,6 +13,9 @@ int check_cycle(listint_t *list)
 {
 	listint_t *ground = list;
 
+	if (list == NULL)
+		return (0);
+
 	while (ground != NULL && list != NULL)
 	{
 		ground = ground->next;
