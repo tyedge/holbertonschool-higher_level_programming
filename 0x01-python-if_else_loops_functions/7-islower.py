@@ -1,5 +1,4 @@
-"""Finds the ASCII value of c and check for a lowercase letter"""
-
+#!/usr/bin/python3
 
 def islower(c):
     if ord(c) >= 97 and ord(c) <= 122:
