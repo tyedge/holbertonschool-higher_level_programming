@@ -14,16 +14,13 @@ int check_cycle(listint_t *list)
 	listint_t *ground = list;
 	listint_t *chaser = list;
 
-	while (ground != NULL)
+	while (ground != NULL && chaser != NULL)
 	{
-		while (chaser != NULL)
-		{
-			chaser = chaser->next;
-			chaser = chaser->next;
-			if (chaser == ground)
-				return (1);
-		}
 		ground = ground->next;
+		chaser = chaser->next;
+		chaser = chaser->next;
+		if (chaser == ground)
+			return (1);
 	}
 	return (0);
 }
