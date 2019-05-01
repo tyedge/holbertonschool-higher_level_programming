@@ -21,8 +21,6 @@ int check_cycle(listint_t *list)
 	while (ground != NULL && chaser != NULL && chaser->next != NULL &&
 	       chaser->next->next != NULL)
 	{
-		if (chaser == ground)
-			return (1);
 		ground = ground->next;
 		chaser = chaser->next->next;
 		if (chaser == ground)
