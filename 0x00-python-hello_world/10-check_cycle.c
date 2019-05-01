@@ -12,17 +12,18 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *ground = list;
-	listint_t *chaser = list;
 
 	if (list == NULL)
 		return (0);
 	if (list->next == NULL)
 		return (0);
-	while (ground != NULL && chaser != NULL)
+	while (ground != NULL && list != NULL)
 	{
 		ground = ground->next;
-		chaser = chaser->next->next;
-		if (chaser == ground)
+		if (ground->next == NULL)
+			return (1);
+		list = list->next->next;
+		if (list == ground)
 			return (1);
 	}
 	return (0);
