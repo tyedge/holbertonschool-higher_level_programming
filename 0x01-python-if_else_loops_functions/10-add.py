@@ -3,5 +3,4 @@
 
 def add(a, b):
     sum = a + b
-#    print("{:d}".format(last_digit), end="")
     return sum
