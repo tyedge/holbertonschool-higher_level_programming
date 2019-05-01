@@ -18,7 +18,8 @@ int check_cycle(listint_t *list)
 		return (0);
 	if (list->next == NULL)
 		return (0);
-	while (ground != NULL && chaser->next != NULL)
+	while (ground != NULL && chaser != NULL && chaser->next != NULL &&
+	       chaser->next->next != NULL)
 	{
 		if (chaser == ground)
 			return (1);
@@ -26,8 +27,6 @@ int check_cycle(listint_t *list)
 		if (ground->next == NULL)
 			return (1);
 		chaser = chaser->next->next;
-		if (ground->next == NULL)
-			return (1);
 	}
 	return (0);
 }
