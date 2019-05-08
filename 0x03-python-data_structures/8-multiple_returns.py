@@ -2,7 +2,7 @@
 
 
 def multiple_returns(sentence):
-    if sentence is not None:
+    if sentence is not "":
         newtup = (len(sentence), sentence[0])
         length = newtup[0]
         first = newtup[1]
