@@ -2,9 +2,12 @@
 
 
 def square_matrix_simple(matrix=[]):
-    if not matrix:
-        return None
-    sqr = []
+    newrow = []
+    newcol = []
+
     for i in matrix:
         for j in i:
-            return sqr.append(i**2)
+            newcol.append(j ** 2)
+        newrow.append(newcol)
+        newcol = []
+    return newrow
