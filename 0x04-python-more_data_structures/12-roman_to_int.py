@@ -6,9 +6,7 @@ def roman_to_int(roman_string):
             'M': "1000"}
     sum = 0
 
-    if not roman_string:
-        return None
-    if type(roman_string) != str:
+    if type(roman_string) is None:
         return 0
     if type(roman_string) != str:
         return 0
