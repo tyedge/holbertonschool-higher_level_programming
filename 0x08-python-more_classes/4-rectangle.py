@@ -22,6 +22,27 @@ class Rectangle:
         self.width = width
         self.height = height
 
+    def area(self):
+        return self.__width * self.__height
+
+    def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        x = ''
+        if self.__width != 0 and self.__height != 0:
+            i = 1
+            while i in range(self.__height):
+                x += '%s\n' % ('#' * self.__width)
+                i += 1
+            x += '%s' % ('#' * self.__width)
+        return x
+
+    def __repr__(self):
+        return 'Rectangle(%s, %s)' % (self.__width, self.__height)
+
     @property
     def width(self):
         return self.__width
@@ -38,7 +59,7 @@ class Rectangle:
     def height(self):
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         if type(value) is not int:
             raise TypeError("height must be an integer")
