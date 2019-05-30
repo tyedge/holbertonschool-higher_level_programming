@@ -38,9 +38,9 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             i = 1
             while i in range(self.__height):
-                x += '%s\n' % (self.print_symbol * self.__width)
+                x += '%s\n' % (str(self.print_symbol) * self.__width)
                 i += 1
-            x += '%s' % (self.print_symbol * self.__width)
+            x += '%s' % (str(self.print_symbol) * self.__width)
         return x
 
     def __repr__(self):
