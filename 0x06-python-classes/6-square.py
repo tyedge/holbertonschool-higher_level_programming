@@ -7,6 +7,14 @@ class Square:
     """This is class defines a square """
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
+        if type(position) is not tuple:
+            raise TypeError(msg)
+        if len(position) != 2:
+            raise TypeError(msg)
+        if type(position) is not int:
+            raise TypeError(msg)
+        if type(position) is not int:
+            raise TypeError(msg)
         self.position = position
 
     def area(self):
@@ -33,9 +41,10 @@ class Square:
             raise TypeError(msg)
         if len(value) != 2:
             raise TypeError(msg)
-        for i in value:
-            if type(i) is not int:
-                raise TypeError(msg)
+        if type(value[0]) is not int:
+            raise TypeError(msg)
+        if type(value[1]) is not int:
+            raise TypeError(msg)
         self.__position = value
 
     def my_print(self):
