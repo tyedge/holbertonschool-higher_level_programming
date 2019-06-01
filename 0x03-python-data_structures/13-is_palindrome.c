@@ -27,7 +27,7 @@ int is_palindrome(listint_t **head)
 	end = len - 1;
 	if (len == 1)
 		return (1);
-	while (trav->next != NULL)
+	while (trav != NULL)
 	{
 		store[i] = trav->n;
 		trav = trav->next;
@@ -36,7 +36,7 @@ int is_palindrome(listint_t **head)
 	store[i++] = '\0';
 	while (start < len && end >= 0)
 	{
-		if (start >= end)
+		if (start > end)
 			return (1);
 		if (store[start] != store[end])
 			return (0);
