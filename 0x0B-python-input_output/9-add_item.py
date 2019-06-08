@@ -7,9 +7,6 @@ load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
 newlist = []
 filename = "add_item.json"
-i = 1
-while i < len(sys.argv):
-        newlist.append(sys.argv[i])
-        i += 1
+newlist.extend(sys.argv[1:])
 save_to_json_file(newlist, filename)
 load_from_json_file(filename)
