@@ -10,7 +10,7 @@ class Student:
 
     def to_json(self, attrs=None):
         dict = self.__dict__
-        if not attrs:
+        if attrs is None:
             return dict
         else:
             dict2 = {}
