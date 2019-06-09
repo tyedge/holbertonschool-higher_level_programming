@@ -19,4 +19,3 @@ with open(filename, 'a', encoding='utf-8') as file:
         i += 1
 
 save_to_json_file(newlist, filename)
-load_from_json_file(filename)
