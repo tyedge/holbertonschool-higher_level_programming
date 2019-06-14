@@ -90,3 +90,22 @@ class Rectangle(Base):
         """ This function prints a special string for Rectangle instances """
         return "[Rectangle] (%s) %s/%s - %s/%s" % (self.id, self.__x, self.__y,
                                                    self.__width, self.__height)
+
+    def update(self, *args):
+        """This function updates some or all fields of a Rectangle instance"""
+        fieldlist = [0, 0, 0, 0, 0]
+        idx = 0
+        while idx < (len(args)):
+            for arg in args:
+                fieldlist[idx] = arg
+                idx += 1
+        if fieldlist[0] > 0:
+            self.id = fieldlist[0]
+        if fieldlist[1] > 0:
+            self.__width = fieldlist[1]
+        if fieldlist[2] > 0:
+            self.__height = fieldlist[2]
+        if fieldlist[3] > 0:
+            self.__x = fieldlist[3]
+        if fieldlist[4] > 0:
+            self.__y = fieldlist[4]
