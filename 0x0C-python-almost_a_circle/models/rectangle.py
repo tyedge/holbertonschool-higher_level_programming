@@ -91,7 +91,7 @@ class Rectangle(Base):
         return "[Rectangle] (%s) %s/%s - %s/%s" % (self.id, self.__x, self.__y,
                                                    self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """This function updates some or all fields of a Rectangle instance"""
         fieldlist = [0, 0, 0, 0, 0]
         idx = 0
@@ -109,3 +109,16 @@ class Rectangle(Base):
             self.__x = fieldlist[3]
         if fieldlist[4] > 0:
             self.__y = fieldlist[4]
+        else:
+            if not args:
+                for key, value in kwargs.items():
+                    if key is "id":
+                        self.id = value
+                    if key is "width":
+                        self.__width = value
+                    if key is "height":
+                        self.__height = value
+                    if key is "x":
+                        self.__x = value
+                    if key is "y":
+                        self.__y = value
