@@ -81,7 +81,7 @@ class Rectangle(Base):
 
     def display(self):
         """ This function prints a Rectangle instance to stdout, using '#' """
-        for b in range(self.__y):
+        for b in range(self.y):
             print()
         for i in range(self.__height):
             print(" " * self.x + "#" * self.__width)
@@ -122,3 +122,9 @@ class Rectangle(Base):
                         self.__x = value
                     if key is "y":
                         self.__y = value
+
+    def to_dictionary(self):
+        """This function returns a dictionary representation of a Rectangle"""
+        new_dict = {'id': self.id, 'width': self.__width, 'height':
+                    self.__height, 'x': self.__x, 'y': self.__y}
+        return new_dict
