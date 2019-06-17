@@ -42,10 +42,11 @@ class Base:
         with open(filename, 'w', encoding='utf-8') as file:
             if list_objs is None:
                 var = file.write(cls.to_json_string([]))
-            for list in list_objs:
-                dict = list.to_dictionary()
-                dlist.append(dict)
-            var = file.write(cls.to_json_string(dlist))
+            else:
+                for list in list_objs:
+                    dict = list.to_dictionary()
+                    dlist.append(dict)
+                var = file.write(cls.to_json_string(dlist))
             return var
 
     @classmethod
