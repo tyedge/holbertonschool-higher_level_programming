@@ -22,7 +22,7 @@ class Base:
         """ This function returns the JSON string representation of\
         list_dictionaries """
         if list_dictionaries is None:
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @staticmethod
@@ -39,11 +39,14 @@ class Base:
         to a file """
         filename = cls.__name__ + '.json'
         dlist = []
-        for list in list_objs:
-            dict = list.to_dictionary()
-            dlist.append(dict)
         with open(filename, 'w', encoding='utf-8') as file:
-            return file.write(cls.to_json_string(dlist))
+            if list_objs is None:
+                var = file.write(cls.to_json_string([]))
+            for list in list_objs:
+                dict = list.to_dictionary()
+                dlist.append(dict)
+            var = file.write(cls.to_json_string(dlist))
+            return var
 
     @classmethod
     def create(cls, **dictionary):
@@ -59,7 +62,7 @@ class Base:
         lins = []
         filename = cls.__name__ + '.json'
         if not path.exists(filename):
-            return lins
+            return "[]"
         else:
             with open(filename, "r", encoding="utf-8") as file:
                 for line in file:
