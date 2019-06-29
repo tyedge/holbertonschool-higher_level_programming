@@ -67,11 +67,13 @@ class Base:
         oth = []
         filename = cls.__name__ + '.json'
         if not path.exists(filename):
-            return "[]"
+            return []
         else:
             with open(filename, "r", encoding="utf-8") as file:
                 for line in file:
                     var = cls.from_json_string(line)
+                    if var == "[]":
+                        return []
                     for i in var:
                         dict = cls.create(**i)
                         oth.append(dict)
