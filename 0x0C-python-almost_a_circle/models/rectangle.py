@@ -77,54 +77,46 @@ class Rectangle(Base):
     def area(self):
         """ This function calculates and returns the area of a Rectangle\
         instance """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """ This function prints a Rectangle instance to stdout, using '#' """
         for b in range(self.y):
             print()
-        for i in range(self.__height):
-            print(" " * self.x + "#" * self.__width)
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """ This function prints a special string for Rectangle instances """
-        return "[Rectangle] (%s) %s/%s - %s/%s" % (self.id, self.__x, self.__y,
-                                                   self.__width, self.__height)
+        return "[Rectangle] (%s) %s/%s - %s/%s" % (self.id, self.x, self.y,
+                                                   self.width, self.height)
 
     def update(self, *args, **kwargs):
         """This function updates some or all fields of a Rectangle instance"""
+        flist = ['id', 'width', 'height', 'x', 'y']
         fieldlist = [0, 0, 0, 0, 0]
         idx = 0
-        while idx < (len(args)):
-            for arg in args:
-                fieldlist[idx] = arg
-                idx += 1
+        for arg in args:
+            fieldlist[idx] = arg
+            idx += 1
         if fieldlist[0] > 0:
             self.id = fieldlist[0]
         if fieldlist[1] > 0:
-            self.__width = fieldlist[1]
+            self.width = fieldlist[1]
         if fieldlist[2] > 0:
-            self.__height = fieldlist[2]
+            self.height = fieldlist[2]
         if fieldlist[3] > 0:
-            self.__x = fieldlist[3]
+            self.x = fieldlist[3]
         if fieldlist[4] > 0:
-            self.__y = fieldlist[4]
-        else:
-            if not args:
-                for key, value in kwargs.items():
-                    if key is "id":
-                        self.id = value
-                    if key is "width":
-                        self.__width = value
-                    if key is "height":
-                        self.__height = value
-                    if key is "x":
-                        self.__x = value
-                    if key is "y":
-                        self.__y = value
+            self.y = fieldlist[4]
+        flist = ['id', 'width', 'height', 'x', 'y']
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                if key in flist:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """This function returns a dictionary representation of a Rectangle"""
-        new_dict = {'id': self.id, 'width': self.__width, 'height':
-                    self.__height, 'x': self.__x, 'y': self.__y}
+        new_dict = {'id': self.id, 'width': self.width, 'height':
+                    self.height, 'x': self.x, 'y': self.y}
         return new_dict

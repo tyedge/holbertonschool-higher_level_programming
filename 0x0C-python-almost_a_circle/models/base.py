@@ -65,7 +65,6 @@ class Base:
     def load_from_file(cls):
         """ This function returns a list of instances """
         oth = []
-        lins = []
         filename = cls.__name__ + '.json'
         if not path.exists(filename):
             return "[]"
@@ -74,9 +73,6 @@ class Base:
                 for line in file:
                     var = cls.from_json_string(line)
                     for i in var:
-                        lins.append(i)
-            for t in lins:
-                test = cls.create(**t)
-                print(test)
-                oth.append(test)
-            return oth
+                        dict = cls.create(**i)
+                        oth.append(dict)
+                return oth
