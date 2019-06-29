@@ -77,6 +77,6 @@ class Base:
                         lins.append(i)
             for t in lins:
                 test = cls.create(**t)
-                print(test);
+                print(test)
                 oth.append(test)
             return oth
