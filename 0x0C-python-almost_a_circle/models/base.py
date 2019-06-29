@@ -52,9 +52,14 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """This function returns an instance with all attributes already set"""
-        reckie = cls(2, 3, 1, 1)
-        reckie.update(**dictionary)
-        return reckie
+        if cls.__name__ == 'Rectangle':
+            reckie = cls(1, 1)
+            reckie.update(**dictionary)
+            return reckie
+        elif cls.__name__ == 'Square':
+            sqr = cls(1)
+            sqr.update(**dictionary)
+            return sqr
 
     @classmethod
     def load_from_file(cls):
@@ -72,5 +77,6 @@ class Base:
                         lins.append(i)
             for t in lins:
                 test = cls.create(**t)
+                print(test);
                 oth.append(test)
             return oth
