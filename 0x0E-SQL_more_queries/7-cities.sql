@@ -2,10 +2,11 @@
 -- (in the database hbtn_0d_usa) on your MySQL server
 -- This script creates a new database and table
 CREATE database IF NOT EXISTS hbtn_0d_usa;
-CREATE table IF NOT EXISTS hbtn_0d_usa.cities (
+USE hbtn_0d_usa;
+CREATE table IF NOT EXISTS cities (
 id INT UNIQUE AUTO_INCREMENT NOT NULL PRIMARY KEY,
-name VARCHAR(256) NOT NULL,
 state_id INT NOT NULL,
-FOREIGN KEY state_id(state_id)
-REFERENCES hbtn_0d_usa.states(id)
-)ENGINE=InnoDB;
+name VARCHAR(256) NOT NULL,
+FOREIGN KEY (state_id)
+REFERENCES states(id)
+);
