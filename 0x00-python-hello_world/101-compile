@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+import os
+import compileall
+compileall.compile_file(os.environ['PYFILE'], legacy=True)
