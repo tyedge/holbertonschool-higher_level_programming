@@ -12,7 +12,7 @@ def find_peak(arr=[]):
     start = arr[0]
     end = arr[arrlen - 1]
 
-    if start < end:
+    while start < end:
         mid = round((start + (end - start))/2)
         if arr[mid] < arr[mid + 1]:
             start = arr[mid + 1]
