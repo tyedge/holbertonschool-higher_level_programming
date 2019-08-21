@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 """ This function returns a peak number from an array, which is defined as a
 number that is greater than its neighbors"""
 
