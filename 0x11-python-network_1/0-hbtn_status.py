@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+#This script that fetches https://intranet.hbtn.io/status and displays a
+#+ a formatted output of the body
 import urllib.request
 
 url = 'https://intranet.hbtn.io/status'
