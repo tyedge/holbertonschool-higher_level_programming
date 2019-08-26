@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-#This script that fetches https://intranet.hbtn.io/status and displays a
-#+ a formatted output of the body
+"""This script that fetches https://intranet.hbtn.io/status and displays a
+formatted output of the body"""
+
 if __name__ == "__main__":
 
     import urllib.request
