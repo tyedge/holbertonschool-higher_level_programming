@@ -2,7 +2,7 @@
 
 const arr = process.argv.slice(2);
 const newarr = [];
-if (arr.length <= 3) {
+if (arr.length <= 1) {
   console.log(0);
 } else {
   for (let i = 0; i < arr.length; i++) {
