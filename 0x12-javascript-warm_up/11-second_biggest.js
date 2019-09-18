@@ -7,7 +7,7 @@ if (process.argv.length <= 2) {
 } else if (process.argv.slice(2).length <= 1) {
   console.log(0);
 } else {
-  arr = arr.sort();
-  next = arr[arr.length - 2];
+  arr = arr.sort().reverse();
+  next = arr[1];
   console.log(parseInt(next));
 }
