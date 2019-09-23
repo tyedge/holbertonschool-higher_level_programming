@@ -19,8 +19,8 @@ if __name__ == '__main__':
     def doQuery(conn):
         """This function defines the database query"""
         cur = conn.cursor()
-        cur.execute("SELECT * FROM {}.states WHERE states.name RLIKE '^N%$'\
-        ORDER BY states.id ASC".format(database))
+        cur.execute("SELECT * FROM {}.states WHERE BINARY states.name LIKE\
+        'N%' ORDER BY states.id ASC".format(database))
         for i in cur:
             print(i)
     doQuery(myConnection)
