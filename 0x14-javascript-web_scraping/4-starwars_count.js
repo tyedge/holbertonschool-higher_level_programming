@@ -10,7 +10,8 @@ request(url, function (error, response, body) {
     const res = JSON.parse(body).results;
     for (const x of res) {
       for (const y of x.characters) {
-        if (y === 'https://swapi.co/api/people/18/') { num++; }
+        if (y === 'https://swapi.co/api/people/18/' ||
+            y === 'https://swapi.co/api/people/18') { num++; }
       }
     }
     console.log(num);
