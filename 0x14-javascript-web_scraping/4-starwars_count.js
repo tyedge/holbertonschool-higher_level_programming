@@ -8,9 +8,8 @@ request(url, function (error, response, body) {
   } else {
     let num = 0;
     const res = JSON.parse(body).results;
-    let x, y;
-    for (x of res) {
-      for (y of x.characters) {
+    for (const x of res) {
+      for (const y of x.characters) {
         if (y === 'https://swapi.co/api/people/18/') { num++; }
       }
     }
