@@ -10,7 +10,9 @@ request(url, function (error, response, body) {
     const res = JSON.parse(body).results;
     let x, y;
     for (x of res) {
-      for (y of x.characters) { if (y.includes('https://swapi.co/api/people/18/')) { num++; } }
+      for (y of x.characters) {
+        if (y === 'https://swapi.co/api/people/18/') { num++; }
+      }
     }
     console.log(num);
   }
