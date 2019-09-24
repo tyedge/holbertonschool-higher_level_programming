@@ -5,5 +5,5 @@ const file = process.argv[2];
 
 request(file, function (error, response) {
   if (error) { console.log(error); }
-  console.log('Code:', response.statusCode);
+  console.log('code:', response.statusCode);
 });
